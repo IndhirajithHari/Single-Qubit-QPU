@@ -1,0 +1,143 @@
+{
+  "project_name": "planar-wirebond-chip",
+  "version": "1.0.0",
+  "author": "Indhirajith",
+  "license": "Open Source",
+  "description": "Single-planar-layer silicon superconducting transmon qubit chip with perimeter wire-bonding packaging specification",
+  "substrate": {
+    "material": "High-Resistivity Silicon (HR-Si)",
+    "die_dimensions_um": {
+      "width_x": 5000.0,
+      "length_y": 5000.0,
+      "thickness_z": 500.0
+    },
+    "relative_permittivity_eps_r": 11.45,
+    "effective_permittivity_eps_eff": 6.225,
+    "loss_tangent": 1.0e-6,
+    "resistivity_ohm_cm": 10000.0
+  },
+  "metallization": {
+    "layer_name": "BASE_METAL",
+    "gds_layer": 1,
+    "gds_datatype": 0,
+    "film_material": "Superconducting Aluminum (Al) / Niobium (Nb)",
+    "film_thickness_nm": 150.0,
+    "critical_temperature_Tc_K": 1.2,
+    "sheet_resistance_milli_ohm_per_sq_ambient": 200.0,
+    "sheet_resistance_sub_Kelvin": 0.0,
+    "patterning_mode": "Single planar subtractive/lift-off lithography, zero TSVs, zero vias, zero bumps"
+  },
+  "central_transmon_qubit": {
+    "qubit_id": "Q0",
+    "pocket": {
+      "width_x_um": 600.0,
+      "height_y_um": 360.0,
+      "center_x_um": 2500.0,
+      "center_y_um": 2500.0,
+      "ground_clearance_gap_um": 30.0
+    },
+    "shunting_capacitor_pads": {
+      "num_pads": 2,
+      "pad_width_x_um": 240.0,
+      "pad_height_y_um": 130.0,
+      "inter_pad_gap_um": 20.0,
+      "capacitance_qq_fF": 42.0,
+      "capacitance_qg_fF": 41.5,
+      "total_shunt_capacitance_C_sigma_fF": 84.2
+    },
+    "josephson_junction": {
+      "nominal_inductance_Lj_nH": 12.0,
+      "effective_inductance_Lj_eff_nH": 10.95,
+      "critical_current_Ic_nA": 27.4,
+      "bridge_gap_um": 20.0,
+      "bridge_width_nm": 200.0,
+      "tunnel_barrier": "AlOx thermal oxide barrier"
+    },
+    "hamiltonian_and_quantum_parameters": {
+      "charging_energy_Ec_MHz": 230.0,
+      "charging_energy_Ec_GHz": 0.230,
+      "josephson_energy_Ej_GHz": 13.6218,
+      "effective_josephson_energy_Ej_eff_GHz": 14.92,
+      "Ej_over_Ec_ratio": 64.87,
+      "Ej_over_Ec_spec_range": [55.0, 75.0],
+      "harmonic_plasma_frequency_fp_GHz": 5.006,
+      "qubit_transition_frequency_f01_GHz": 4.965,
+      "qubit_transition_frequency_spec_range_GHz": [4.90, 5.10],
+      "anharmonicity_alpha_MHz": -222.0,
+      "anharmonicity_spec_range_MHz": [-240.0, -200.0]
+    }
+  },
+  "coplanar_waveguides": {
+    "center_conductor_width_W_um": 10.0,
+    "dielectric_gap_S_um": 6.0,
+    "effective_gap_S_eff_um": 5.7,
+    "characteristic_impedance_Z0_ohm": 50.0,
+    "impedance_tolerance_ohm": 0.5,
+    "phase_velocity_m_per_s": 1.202e8,
+    "per_unit_length_inductance_nH_per_mm": 0.416,
+    "per_unit_length_capacitance_fF_per_mm": 166.4,
+    "feedlines": [
+      {
+        "line_name": "XY_DRIVE",
+        "purpose": "Single-qubit microwave rotation drive",
+        "launch_pad": "GSG_LAUNCH_1_XY",
+        "pad_origin_um": [1200.0, 200.0],
+        "destination": "Transmon left capacitor pad",
+        "coupling_gap_um": 15.0,
+        "coupling_capacitance_Cc_fF": 0.85,
+        "crossover_free": true
+      },
+      {
+        "line_name": "FLUX_CONTROL",
+        "purpose": "Fast flux tuning and pulse bias",
+        "launch_pad": "GSG_LAUNCH_2_FLUX",
+        "pad_origin_um": [2500.0, 200.0],
+        "destination": "Transmon bottom ground perimeter",
+        "coupling_gap_um": 10.0,
+        "coupling_capacitance_Cc_fF": 1.20,
+        "crossover_free": true
+      },
+      {
+        "line_name": "READOUT_RESONATOR",
+        "purpose": "Dispersive QND readout resonator (lambda/4)",
+        "launch_pad": "GSG_LAUNCH_3_READOUT",
+        "pad_origin_um": [3800.0, 4800.0],
+        "destination": "Transmon right capacitor pad",
+        "resonator_type": "quarter_wavelength_cpw",
+        "fundamental_frequency_fr_GHz": 7.05,
+        "resonator_length_um": 4260.0,
+        "coupling_gap_to_qubit_um": 12.0,
+        "dispersive_coupling_g_over_2pi_MHz": 65.0,
+        "dispersive_shift_chi_over_2pi_MHz": -1.25,
+        "crossover_free": true
+      }
+    ]
+  },
+  "gsg_wirebond_launchers": {
+    "count": 3,
+    "signal_pad_width_um": 150.0,
+    "signal_pad_length_um": 150.0,
+    "lateral_ground_gap_um": 90.0,
+    "taper_length_um": 250.0,
+    "taper_impedance_profile": "Linear constant 50-ohm W/S ratio (10um/6um -> 150um/90um = 1.667)",
+    "die_edge_inset_um": 200.0,
+    "bonder_tool_clearance_limit_um": 150.0,
+    "ground_flanking_zones": {
+      "pad_width_um": 200.0,
+      "pad_length_um": 250.0,
+      "wires_per_flank": 2,
+      "total_ground_wires_per_launcher": 4
+    },
+    "total_bond_wires_per_launcher": 5
+  },
+  "alignment_fiducials": {
+    "crosshair_outer_span_um": 120.0,
+    "crosshair_stroke_um": 10.0,
+    "corner_coordinates_um": [
+      [350.0, 350.0],
+      [4650.0, 350.0],
+      [4650.0, 4650.0],
+      [350.0, 4650.0]
+    ]
+  }
+}

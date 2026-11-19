@@ -1,0 +1,48 @@
+{
+  "qpu_id": "PLANAR_TRANSMON_1Q_CHIP",
+  "version": "1.0.0",
+  "author": "Indhirajith",
+  "license": "Open Source",
+  "firmware_stack": "Antigravity Quantum Pulse HAL (FPGA/AWG Microcode Engine)",
+  "hardware_channels": {
+    "channel_0_xy": {
+      "name": "XY_MICROWAVE_DRIVE",
+      "physical_launcher": "GSG_LAUNCH_1_XY",
+      "target_qubit": "Q0",
+      "lo_frequency_GHz": 4.950,
+      "if_frequency_MHz": 50.0,
+      "rf_output_frequency_GHz": 5.000,
+      "dac_sampling_rate_GSps": 2.4,
+      "max_dac_voltage_V": 1.0,
+      "calibrated_pi_pulse": {
+        "duration_ns": 20.0,
+        "sigma_ns": 5.0,
+        "pi_amplitude_V": 0.450,
+        "drag_coefficient_beta": 0.718,
+        "anharmonicity_MHz": -222.0
+      }
+    },
+    "channel_1_flux": {
+      "name": "Z_FLUX_BIAS",
+      "physical_launcher": "GSG_LAUNCH_2_FLUX",
+      "target_qubit": "Q0",
+      "dac_sampling_rate_GSps": 1.2,
+      "voltage_range_V": [-1.0, 1.0],
+      "flux_responsivity_Phi0_per_V": 1.25,
+      "nominal_bias_offset_V": 0.0
+    },
+    "channel_2_readout": {
+      "name": "DISPERSIVE_READOUT_RO",
+      "physical_launcher": "GSG_LAUNCH_3_READOUT",
+      "target_resonator": "R0",
+      "lo_frequency_GHz": 7.000,
+      "if_frequency_MHz": 50.0,
+      "rf_output_frequency_GHz": 7.050,
+      "dac_sampling_rate_GSps": 2.4,
+      "adc_sampling_rate_GSps": 1.8,
+      "readout_pulse_duration_ns": 1000.0,
+      "integration_window_ns": 900.0,
+      "threshold_discrimination_V": 0.0
+    }
+  }
+}

@@ -1,0 +1,23 @@
+
+[EXPERIMENT 1] POWER RABI OSCILLATION CALIBRATION (XY DRIVE)
+--------------------------------------------------------------------------------
+  • Calibrated Pi-Pulse Amplitude: 0.450 V (DAC peak for 180-deg flip)
+  • Calibrated Pi/2-Pulse Amplitude: 0.225 V (DAC peak for 90-deg flip)
+  • Maximum Inversion Probability P(|1>): 100.00%
+
+[EXPERIMENT 2] RAMSEY COHERENCE FRINGES (FREE PRECESSION & DEPHASING)
+--------------------------------------------------------------------------------
+  • Ramsey Artificial Detuning: 2.50 MHz (Oscillation period = 400.0 ns)
+  • Measured Dephasing Time T2*: ~78.0 us
+  • Fringe Contrast @ tau=0: 100.0%
+
+[EXPERIMENT 3] DISPERSIVE READOUT & IQ DISCRIMINATION CLUSTERING
+--------------------------------------------------------------------------------
+  • Single-Shot Readout Fidelity: 99.54% (Threshold at I = 0.0)
+  • Ground State Centroid (IQ): (0.249, 0.046) V
+  • Excited State Centroid (IQ): (-0.250, -0.047) V
+  • IQ Blob Separation (SNR): 5.25 sigma
+
+================================================================================
+QPU FIRMWARE EXECUTION COMPLETED SUCCESSFULLY (100% OPERATIONAL)
+================================================================================

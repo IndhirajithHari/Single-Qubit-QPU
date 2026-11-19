@@ -1,0 +1,76 @@
+{
+  "project_name": "planar-wirebond-chip",
+  "author": "Indhirajith",
+  "license": "Open Source",
+  "wirebond_type": "Ultrasonic Wedge Bonding (Al-1%Si)",
+  "pcb_carrier": {
+    "substrate": "Rogers RO4350B",
+    "dielectric_constant_eps_r": 3.48,
+    "loss_tangent": 0.0037,
+    "copper_cladding_thickness_um": 35.0,
+    "surface_finish": "ENEPIG / Immersion Gold (Al wire bondable)",
+    "pocket": {
+      "milled_pocket_depth_um": 525.0,
+      "silicon_die_thickness_um": 500.0,
+      "conductive_epoxy_type": "EPO-TEK H20E (Silver-filled)",
+      "conductive_epoxy_thickness_um": 25.0,
+      "vertical_coplanarity_offset_dz_um": 0.0,
+      "die_to_pcb_trench_gap_um": 100.0,
+      "flush_condition_met": true
+    }
+  },
+  "bond_wire_geometry": {
+    "material": "Al-1%Si (Superconducting at mK)",
+    "diameter_um": 25.0,
+    "diameter_mils": 1.0,
+    "span_length_um": 450.0,
+    "loop_height_um": 100.0,
+    "edge_clearance_above_die_corner_um": 55.0,
+    "heel_crack_prevention": "Controlled ultrasonic deformation ratio (1.2 to 1.5 wire diameter)"
+  },
+  "rf_parasitics_and_inductance": {
+    "single_wire_inductance_nH": 0.4,
+    "per_unit_length_inductance_nH_per_mm": 0.888888888888889,
+    "effective_ground_inductance_nH": 0.15259952193827012,
+    "inductance_reduction_percent": 61.85011951543247,
+    "total_effective_gsg_loop_inductance_nH": 0.4850695952239678,
+    "slotline_resonance_1_ground_wire_GHz": 56.26976975981911,
+    "slotline_resonance_4_ground_wires_GHz": 91.10213340355871,
+    "slotline_suppression_margin_GHz": 84.05213340355871
+  },
+  "s_parameter_benchmarks": {
+    "5GHz_qubit": {
+      "frequency_GHz": 5.0,
+      "reactive_impedance_XL_ohm": 12.465839649444302,
+      "S11_reflection_dB": -18.152538401472114,
+      "S21_insertion_loss_dB": -0.06696912499761287,
+      "transmission_magnitude": 0.9923195411756847
+    },
+    "7GHz_readout": {
+      "frequency_GHz": 7.0,
+      "reactive_impedance_XL_ohm": 17.668317083789,
+      "S11_reflection_dB": -15.189596704349002,
+      "S21_insertion_loss_dB": -0.1335003984670306,
+      "transmission_magnitude": 0.9847477112074915
+    },
+    "8GHz_spec_cutoff": {
+      "frequency_GHz": 8.0,
+      "reactive_impedance_XL_ohm": 20.156458465432117,
+      "S11_reflection_dB": -14.08467168864844,
+      "S21_insertion_loss_dB": -0.17295624805326024,
+      "transmission_magnitude": 0.9802846170463275
+    },
+    "10GHz_upper_bound": {
+      "frequency_GHz": 10.0,
+      "reactive_impedance_XL_ohm": 25.13274122871835,
+      "S11_reflection_dB": -12.261211428175205,
+      "S21_insertion_loss_dB": -0.26600862189675395,
+      "transmission_magnitude": 0.9698388315126841
+    }
+  },
+  "verification_status": {
+    "insertion_loss_below_8GHz_pass": true,
+    "coplanar_flush_pass": true,
+    "slotline_suppressed_pass": true
+  }
+}
